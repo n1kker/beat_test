@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beat Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .beat-list {
+            flex: 1;
+            overflow-y: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+        }
+        .beat-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 90%;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .beat-item:hover {
+            background-color: #f8f8f8;
+        }
+        .player-container {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        audio {
+            width: 90%;
+        }
+        h1 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Выберите бит для прослушивания</h1>
+    <div class="beat-list">
+        <div class="beat-item" onclick="playBeat('refound radar rayza 195.mp3')">Refound - whoisradar, rayza</div>
+        <div class="beat-item" onclick="playBeat('22 radar dealomoney 100.mp3')">22 - whoisradar dealomomey</div>
+        <div class="beat-item" onclick="playBeat('6st radar ruckusprod dealomomey 195.mp3')">6st - whoisradar, ruckusprod, dealomomey</div>
+    </div>
+    <div class="player-container">
+        <audio id="audioPlayer" controls>
+            <source src="" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио элемент.
+        </audio>
+    </div>
+
+    <script>
+        function playBeat(fileName) {
+            const player = document.getElementById('audioPlayer');
+            player.src = fileName;
+            player.play();
+        }
+    </script>
+</body>
+</html>
